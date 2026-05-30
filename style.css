@@ -1,0 +1,161 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: antiquewhite;
+}
+
+section {
+    max-width: 1200px;
+    padding: 60px 20px;
+    margin: 20px auto;
+    background-color: rgba(0, 255, 229, 0.801);
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+/* ((((((((((((((((((((HERO))))))))))))))))))))))) */
+#hero {
+    background: linear-gradient(150deg, rgb(201, 219, 111), rgb(69, 196, 189));
+    border-radius: 50px;
+
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 10px;
+}
+
+.hero-image {
+    .hero-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+    
+
+}
+.hero-image img {
+    width: 350px;
+    transform: scale(2);
+}
+
+
+.hero-text h1 {
+    font-size: 71px;
+    margin-bottom: 5px;
+}
+
+.hero-text p {
+    font-size: 24px;
+}
+
+.hero-text {
+    padding-bottom: 150px;
+}
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<BUTTONS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+button {
+    background-color: rgb(44, 182, 22);
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 24px;
+    border: none;
+    border-radius: 20px;
+    padding: 22px 40px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: chartreuse;
+}
+
+/* (((((((((((((((((((((((((((((((DETAILS)))))))))))))))))))))))))))))))) */
+#details {
+    padding: 21px;
+}
+
+#details h2 {
+    text-align: left;
+    margin-left: 111px;
+}
+
+#details p {
+    text-align: justify;
+    max-width: 1001px;
+    margin: 0 auto 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<CARDS>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.card img {
+    width: 100%;
+}
+
+.card {
+    width: 350px;
+    background-color: rgba(185, 199, 30, 0.681);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0px 10px 5px 0.5px;
+
+}
+
+.card img {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    transition: 0.5s;
+}
+
+/* ((((((((((((((((((((((((((((((((((ORDER MENU)))))))))))))))))))))))))))))))))))))) */
+#order {
+    background-color: antiquewhite;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 399px;
+    margin: auto;
+}
+
+input {
+    font-size: 17px;
+    padding: 5px;
+}
+
+.delivery-options {
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* ===================================================================================================================================================================== */

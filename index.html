@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>LowPoly Lab</title>
+</head>
+
+<body>
+    <!-- ===================================HERO========================================== -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Axolotl keychain</h1>
+                <p>Превърни обикновените ключове в нещо, което си струва да покажеш.</p>
+                <a href="#order">
+                    <button>Поръчай сега</button>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="images/IMG_3989-removebg-preview.png">
+
+            </div>
+        </div>
+    </section>
+    <!-- <<<<<<<<<<<<<<<<<<<<<<<<<DESCRIPTION>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <section id="details">
+        <h2>Описание</h2>
+
+        <p>
+            Axolotl Keychain е вдъхновен от един от най-обичаните герои в Minecraft – аксолотъла. Този ключодържател
+            превръща обикновените ключове в интересен и разпознаваем аксесоар, който веднага привлича внимание.
+        </p>
+        <p>
+            Създаден за деца и геймъри, продуктът е лек, компактен и удобен за носене. Може да се закачи не само на
+            ключове, но и на раница или несесер, което го прави част от ежедневния стил.
+        </p>
+        <p>
+            Освен визията, ключодържателят решава един прост, но реален проблем – скучните и еднакви ключове. С него
+            всеки може да изрази своя интерес към игрите и да добави индивидуалност към вещите си.
+        </p>
+
+    </section>
+    <!-- ..................................CARDS.......................................... -->
+    <section id="cards-container">
+        <div class="card">
+            <img src="images/IMG_3990.jpeg" alt="Not loading">
+            <h3>Любим герой от Minecraft</h3>
+            <p>Аксолотълът е сред най-харесваните персонажи в играта, което прави ключодържателя лесно разпознаваем и
+                желан от феновете.</p>
+        </div>
+        <div class="card">
+            <img src="images/IMG_3991.jpeg" alt="Not loading">
+            <h3>Удобен за всекидневна употреба</h3>
+            <p>Компактният размер позволява да се използва навсякъде – на ключове, раници или ученически принадлежности.
+            </p>
+        </div>
+        <div class="card">
+            <img src="images/IMG_3989.jpeg" alt="Not loading">
+            <h3>Идея за подарък</h3>
+            <p>Подходящ за рожден ден, малка изненада или допълнение към геймърски подарък – достъпен и винаги на място.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- =+++++++++++++++++++++++++++++++++ORDER MENU+++++++++++++++++++++++++++++++++++++++++++++= -->
+    <section id="order">
+        <h2>Поръчка</h2>
+        <p>Поръчай своя Axolotl Keychain бързо и лесно. Добави го към ключовете си или го подари на приятел – малък
+            детайл, който носи настроение всеки ден.</p>
+        <form action="https://formspree.io/f/meenrwkr" method="POST">
+            <input type="hidden" name="_next" value="thankyou.html">
+            <div class="price-box">
+                <p>Цена за 1 брой: <strong><span id="price">3</span> Euro</strong></p>
+
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" name="Quantity" value="1" min="1" required
+                    oninput="calculateTotal()">
+
+                <p>Обща цена: <strong><span id="total">3</span> Euro</strong></p>
+
+                <input type="hidden" id="totalInput" name="Total price" value="3 Euro.">
+                <label for="variant">Choose colour:</label>
+
+                <select id="variant" name="Axolotl variant" required>
+                    <option value="">-- Select variant --</option>
+                    <option value="Pink Axolotl">Yellow Axolotl</option>
+                    <option value="Blue Axolotl">Blue Axolotl</option>
+                    <option value="Green Axolotl">Green Axolotl</option>
+                    
+                </select>
+            </div>
+
+            <input type="text" name="Customer name" placeholder="Вашето име" required>
+            <input type="tel" name="Phone number" placeholder="Телефон" required>
+            <input type="email" name="Email" placeholder="Имейл" required>
+            <div class="delivery-options">
+                <label>
+                    <input type="radio" name="delivery" value="adress" required onclick="showDeliveryField('adress')">
+                    До адрес
+                </label>
+                <label>
+                    <input type="radio" name="delivery" value="office" required onclick="showDeliveryField('office')">
+                    До офис
+                </label>
+            </div>
+            <input id="adressfield" type="text" name="address" placeholder="адрес за доставка" required
+                style="display: none;">
+            <input id="officefield" type="text" name="office" placeholder="офис за доставка" required
+                style="display: none;">
+            <button type="submit">Изпрати Поръчка</button>
+
+        </form>
+
+
+    </section>
+    <script>
+
+        function showDeliveryField(type) {
+            const adressfield = document.getElementById("adressfield");
+            const officefield = document.getElementById("officefield");
+            if (type === "adress") {
+                adressfield.style.display = "block";
+                officefield.style.display = "none";
+
+                adressfield.required = true;
+                officefield.required = false;
+            } else {
+                adressfield.style.display = "none";
+                officefield.style.display = "block";
+
+                adressfield.required = false;
+                officefield.required = true;
+            }
+
+
+        }
+
+    </script>
+    <script>
+        const productPrice = 3;
+
+        function calculateTotal() {
+            const quantity = document.getElementById("quantity").value;
+            const total = productPrice * quantity;
+
+            document.getElementById("total").textContent = total;
+            document.getElementById("totalInput").value = total + "Euro";
+        }
+
+        function showDeliveryField(type) {
+            const adressfield = document.getElementById("adressfield");
+            const officefield = document.getElementById("officefield");
+
+            if (type === "adress") {
+                adressfield.style.display = "block";
+                officefield.style.display = "none";
+
+                adressfield.required = true;
+                officefield.required = false;
+            } else {
+                adressfield.style.display = "none";
+                officefield.style.display = "block";
+
+                adressfield.required = false;
+                officefield.required = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
